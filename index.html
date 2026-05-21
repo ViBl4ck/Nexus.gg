@@ -1,109 +1,460 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gametech | Ark 2 Launch & Setup</title>
-    
+    <meta name="theme-color" content="#050507">
+    <meta name="description" content="Nexus.gg — O hub definitivo para gamers. Descubra, jogue e conecte-se. Lançamentos, ofertas e comunidade em um só lugar.">
+
+    <!-- Open Graph (compartilhamento em redes sociais) -->
+    <meta property="og:title" content="Nexus.gg — Seu universo digital">
+    <meta property="og:description" content="O hub definitivo para gamers. Descubra, jogue e conecte-se.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <title>Nexus.gg — Seu universo digital</title>
+
+    <!-- Favicon SVG inline (placeholder, troque depois) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23ccff00'/%3E%3Ctext x='50' y='68' font-family='sans-serif' font-size='60' font-weight='900' text-anchor='middle' fill='%23050507'%3EN%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header id="cabecalho">
-        <div class="container header-content">
-            <div id="logo">
-                <h1>GAME<span class="highlight">TECH</span></h1>
-            </div>
-            
-            <nav id="menu-principal">
-                <ul>
-                    <li><a href="#lancamento">Lançamentos</a></li>
-                    <li><a href="#games">Games</a></li>
-                    <li><a href="#utilidades">Setup</a></li>
-                    <li><a href="#acessorios">Acessórios</a></li>
-                    <li><a href="http://127.0.0.1:3000/index.html?serverWindowId=a06b52c3-ac8c-4486-ab0a-bc2993e44aad#" class="btn-hub">Voltar ao Hub</a></li>
-                </ul>
-                <div class="menu-mobile-icon">☰</div>
+    <!-- Skip link de acessibilidade (visível só ao focar) -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="site-header" id="site-header">
+        <div class="container site-header__inner">
+
+            <a href="#home" class="logo" data-page="home" aria-label="Nexus.gg — Página inicial">
+                <span class="logo__mark" aria-hidden="true">N</span>
+                <span class="logo__text">NEXUS<span class="logo__accent">.gg</span></span>
+            </a>
+
+            <nav class="primary-nav" aria-label="Navegação principal">
+                <a href="#home" class="nav-link is-active" data-page="home">Home</a>
+                <a href="#explore" class="nav-link" data-page="explore">Explorar</a>
+                <a href="#releases" class="nav-link" data-page="releases">Lançamentos</a>
+                <a href="#community" class="nav-link" data-page="community">Comunidade</a>
             </nav>
+
+            <div class="header-actions">
+                <button class="icon-btn" type="button" aria-label="Carrinho de compras">
+                    <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+                    <span class="icon-btn__badge" id="cart-count" hidden>0</span>
+                </button>
+
+                <button class="profile-btn" type="button" aria-label="Abrir perfil do usuário">
+                    <img src="https://ui-avatars.com/api/?name=Player+One&background=7c3aed&color=fff"
+                         alt="Avatar do usuário Player One"
+                         class="profile-btn__avatar"
+                         width="32" height="32">
+                    <span class="profile-btn__label">Perfil</span>
+                </button>
+
+                <button class="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-drawer" id="hamburger-btn">
+                    <span class="hamburger__bar" aria-hidden="true"></span>
+                    <span class="hamburger__bar" aria-hidden="true"></span>
+                    <span class="hamburger__bar" aria-hidden="true"></span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <main>
-        <section id="lancamento" class="secao-conteudo destaque-section">
-            <h2 class="titulo-neon">Lançamento Global: <span class="data">24.09.2025</span></h2>
-            
-            <div class="card-anuncio destaque-principal">
-                <div class="img-wrapper">
-                    <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050420/capsule_616x353.jpg?t=1681748704" alt="Ark 2 Banner">
-                    <div class="tag-exclusiva">EXCLUSIVO</div>
-                </div>
-                <div class="card-info">
-                    <h3>Ark 2: Survival Evolved</h3>
-                    <p class="subtitulo">Com Vin Diesel</p>
-                    <p class="descricao">A experiência de sobrevivência definitiva. Gráficos Unreal Engine 5 de última geração. Garanta seu acesso antecipado.</p>
-                    <div class="price-box">
-                        <span class="label">Pré-venda:</span>
-                        <span class="status">DISPONÍVEL</span>
+    <!-- ===================== MENU MOBILE (DRAWER) ===================== -->
+    <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+        <nav aria-label="Navegação mobile">
+            <a href="#home" class="mobile-drawer__link is-active" data-page="home">
+                <i class="fa-solid fa-house" aria-hidden="true"></i> Home
+            </a>
+            <a href="#explore" class="mobile-drawer__link" data-page="explore">
+                <i class="fa-solid fa-compass" aria-hidden="true"></i> Explorar
+            </a>
+            <a href="#releases" class="mobile-drawer__link" data-page="releases">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i> Lançamentos
+            </a>
+            <a href="#community" class="mobile-drawer__link" data-page="community">
+                <i class="fa-solid fa-users" aria-hidden="true"></i> Comunidade
+            </a>
+        </nav>
+    </aside>
+    <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+
+    <!-- ===================== MAIN ===================== -->
+    <main id="main-content">
+
+        <!-- =========================================================== -->
+        <!-- PÁGINA: HOME                                                 -->
+        <!-- =========================================================== -->
+        <section id="page-home" class="page is-active" aria-label="Página inicial">
+
+            <!-- HERO -->
+            <div class="hero">
+                <div class="container hero__inner">
+                    <div class="hero__content">
+                        <span class="eyebrow">
+                            <span class="eyebrow__dot" aria-hidden="true"></span>
+                            Hub Central
+                        </span>
+                        <h1 class="hero__title">
+                            Onde gamers encontram<br>
+                            <span class="text-gradient">o próximo vício</span>
+                        </h1>
+                        <p class="hero__description">
+                            Catálogo curado, drops semanais grátis e a comunidade mais barulhenta do Brasil. Tudo num lugar só.
+                        </p>
+                        <div class="hero__actions">
+                            <a href="#explore" class="btn btn--primary" data-page="explore">
+                                Explorar catálogo
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                            <a href="#releases" class="btn btn--secondary" data-page="releases">
+                                Ver lançamentos
+                            </a>
+                        </div>
                     </div>
-                    <button class="cta-principal glow-effect" id="btn-ark">RESERVAR AGORA</button>
+
+                    <figure class="hero__visual">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1400&auto=format&fit=crop"
+                             alt="Cidade cyberpunk neon vista do alto"
+                             loading="eager"
+                             width="1400" height="900">
+                    </figure>
+                </div>
+            </div>
+
+            <!-- BANNER: JOGOS GRÁTIS DA SEMANA -->
+            <div class="container section">
+                <div class="free-banner">
+                    <div class="free-banner__glow" aria-hidden="true"></div>
+
+                    <div class="free-banner__info">
+                        <div class="free-banner__icon" aria-hidden="true">
+                            <i class="fa-solid fa-gift"></i>
+                        </div>
+                        <div>
+                            <h2 class="free-banner__title">Jogos gratuitos da semana</h2>
+                            <p class="free-banner__sub">Resgate agora e mantenha para sempre. Atualiza toda quinta-feira.</p>
+                        </div>
+                    </div>
+
+                    <div class="free-banner__games" id="free-games">
+                        <!-- Renderizado por JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROMOÇÕES DIÁRIAS -->
+            <div class="container section">
+                <header class="section-header">
+                    <div>
+                        <span class="eyebrow eyebrow--danger">Ofertas relâmpago</span>
+                        <h2 class="section-title">Promoções <span class="text-accent">diárias</span></h2>
+                    </div>
+                    <div class="countdown" aria-live="polite">
+                        <span class="countdown__label">Termina em:</span>
+                        <time class="countdown__time" id="deals-countdown">14:22:05</time>
+                    </div>
+                </header>
+
+                <div class="deals-grid" id="deals-grid">
+                    <!-- Renderizado por JS a partir de gamesData -->
+                </div>
+            </div>
+
+            <!-- CATEGORIAS -->
+            <div class="container section">
+                <header class="section-header">
+                    <div>
+                        <span class="eyebrow">Universos</span>
+                        <h2 class="section-title">Explore por <span class="text-accent">categoria</span></h2>
+                    </div>
+                </header>
+
+                <div class="categories-grid" id="categories-grid">
+                    <!-- Renderizado por JS -->
+                </div>
+            </div>
+
+        </section>
+
+        <!-- =========================================================== -->
+        <!-- PÁGINA: EXPLORAR                                             -->
+        <!-- =========================================================== -->
+        <section id="page-explore" class="page" aria-label="Catálogo de jogos">
+            <div class="container">
+
+                <header class="page-header">
+                    <h2 class="page-title">Catálogo <span class="text-accent">completo</span></h2>
+                    <p class="page-subtitle">
+                        <span id="results-count">0 jogos</span>
+                        <span class="dot-sep" aria-hidden="true">·</span>
+                        <span>Filtros ativos: <span id="active-filters">nenhum</span></span>
+                    </p>
+                </header>
+
+                <div class="explore-layout">
+
+                    <!-- Filtros -->
+                    <aside class="filters" aria-label="Filtros de catálogo">
+
+                        <div class="filters__group">
+                            <label for="search-input" class="filters__label">Buscar</label>
+                            <div class="input-search">
+                                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                                <input type="search"
+                                       id="search-input"
+                                       class="input"
+                                       placeholder="Nome do jogo..."
+                                       autocomplete="off">
+                            </div>
+                        </div>
+
+                        <fieldset class="filters__group">
+                            <legend class="filters__label">Categoria</legend>
+                            <div class="radio-list" id="category-filters">
+                                <label class="radio-item">
+                                    <input type="radio" name="category" value="all" checked>
+                                    <span>Todos</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="category" value="RPG">
+                                    <span>RPG</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="category" value="Ação">
+                                    <span>Ação / FPS</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="category" value="Estratégia">
+                                    <span>Estratégia</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="category" value="Indie">
+                                    <span>Indie</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="filters__group">
+                            <legend class="filters__label">Apenas</legend>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="filter-favorites">
+                                <span>
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                    Meus favoritos
+                                </span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="filter-onsale">
+                                <span>
+                                    <i class="fa-solid fa-tag" aria-hidden="true"></i>
+                                    Em promoção
+                                </span>
+                            </label>
+                        </fieldset>
+
+                        <button type="button" class="btn btn--ghost btn--full" id="clear-filters">
+                            Limpar filtros
+                        </button>
+                    </aside>
+
+                    <!-- Grid de jogos -->
+                    <div class="games-grid" id="games-grid">
+                        <!-- Renderizado por JS -->
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <hr class="divisor-neon">
+        <!-- =========================================================== -->
+        <!-- PÁGINA: LANÇAMENTOS                                          -->
+        <!-- =========================================================== -->
+        <section id="page-releases" class="page" aria-label="Lançamentos">
+            <div class="container">
 
-        <section id="utilidades" class="secao-conteudo">
-            <h2 class="titulo-secao">Upgrade seu Setup</h2>
-            <div class="grid-cards">
-                <div class="card-anuncio">
-                    <div class="img-container">
-                        <img src="https://m.media-amazon.com/images/I/51vpQxI9bgL._AC_SX679_.jpg" alt="Cadeira Gamer">
+                <header class="page-header page-header--centered">
+                    <span class="eyebrow">Novidades da semana</span>
+                    <h2 class="page-title">Lançamentos <span class="text-gradient">recentes</span></h2>
+                    <p class="page-subtitle">Os jogos mais esperados, prontos pra você mergulhar.</p>
+                </header>
+
+                <div class="releases-list" id="releases-container">
+                    <!-- Renderizado por JS -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================================== -->
+        <!-- PÁGINA: COMUNIDADE                                           -->
+        <!-- =========================================================== -->
+        <section id="page-community" class="page" aria-label="Comunidade">
+            <div class="container">
+
+                <div class="community-layout">
+
+                    <!-- Feed principal -->
+                    <div class="community-main">
+
+                        <!-- Composer -->
+                        <form class="composer" id="composer-form">
+                            <img src="https://ui-avatars.com/api/?name=Player+One&background=7c3aed&color=fff"
+                                 alt="Seu avatar"
+                                 class="composer__avatar"
+                                 width="40" height="40">
+                            <div class="composer__body">
+                                <label for="composer-textarea" class="visually-hidden">Escreva um post</label>
+                                <textarea id="composer-textarea"
+                                          class="input input--textarea"
+                                          placeholder="Avalie um jogo ou compartilhe uma arte..."></textarea>
+                                <div class="composer__actions">
+                                    <div class="composer__tools">
+                                        <button type="button" class="icon-btn icon-btn--small" aria-label="Anexar imagem">
+                                            <i class="fa-solid fa-image" aria-hidden="true"></i>
+                                        </button>
+                                        <button type="button" class="icon-btn icon-btn--small" aria-label="Adicionar avaliação">
+                                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--small">Publicar</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Tabs -->
+                        <div class="tabs" role="tablist" aria-label="Filtros do feed">
+                            <button type="button" class="tab is-active" role="tab" data-feed-filter="all">
+                                Feed geral
+                            </button>
+                            <button type="button" class="tab" role="tab" data-feed-filter="art">
+                                Apenas artes
+                            </button>
+                            <button type="button" class="tab" role="tab" data-feed-filter="review">
+                                Reviews
+                            </button>
+                        </div>
+
+                        <!-- Feed -->
+                        <div class="community-feed" id="community-feed">
+                            <!-- Renderizado por JS -->
+                        </div>
                     </div>
-                    <div class="card-info">
-                        <h3>Cadeira Snake Lancaster</h3>
-                        <p>Ergonomia de elite. Reclinação 135º e suporte para 120kg.</p>
-                        <a href="https://www.amazon.com.br/Cadeira-Gamer-Snake-Lancaster-CGF001/dp/B0CLMDP1VG/ref=asc_df_B0CLMDP1VG?mcid=a2d1b533fcab39d18693ff8ff5a40f36&tag=googleshopp00-20&linkCode=df0&hvadid=709968341269&hvpos=&hvnetw=g&hvrand=12777164538080460911&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9196708&hvtargid=pla-2245543174734&psc=1&language=pt_BR&gad_source=1" target="_blank" class="cta-secundario">
-                           Ver Oferta
+
+                    <!-- Sidebar -->
+                    <aside class="community-sidebar" aria-label="Top contribuidores">
+                        <div class="card-sidebar">
+                            <h3 class="card-sidebar__title">Top contribuidores</h3>
+                            <div id="top-contributors">
+                                <!-- Renderizado por JS -->
+                            </div>
+                        </div>
+
+                        <div class="card-sidebar">
+                            <h3 class="card-sidebar__title">Faça parte</h3>
+                            <p class="card-sidebar__text">
+                                Compartilhe sua arte, reviews e conquiste a comunidade Nexus.
+                            </p>
+                            <button type="button" class="btn btn--secondary btn--full">
+                                Criar conta
+                            </button>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="site-footer__top">
+                <div class="site-footer__brand">
+                    <a href="#home" class="logo" data-page="home" aria-label="Nexus.gg — Página inicial">
+                        <span class="logo__mark" aria-hidden="true">N</span>
+                        <span class="logo__text">NEXUS<span class="logo__accent">.gg</span></span>
+                    </a>
+                    <p class="site-footer__tagline">
+                        O hub que respeita seu tempo e seu bolso. Sem ads, sem dark patterns.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Discord">
+                            <i class="fa-brands fa-discord" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitch">
+                            <i class="fa-brands fa-twitch" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="card-anuncio card-placeholder">
-                    <div class="placeholder-content">
-                        <h3>Em Breve</h3>
-                        <p>Novos itens de conforto chegando.</p>
+                <nav class="site-footer__columns" aria-label="Rodapé">
+                    <div class="footer-column">
+                        <h4 class="footer-column__title">Plataforma</h4>
+                        <ul>
+                            <li><a href="#explore" data-page="explore">Catálogo</a></li>
+                            <li><a href="#releases" data-page="releases">Lançamentos</a></li>
+                            <li><a href="#">Promoções</a></li>
+                            <li><a href="#">Listas</a></li>
+                        </ul>
                     </div>
-                </div>
+                    <div class="footer-column">
+                        <h4 class="footer-column__title">Comunidade</h4>
+                        <ul>
+                            <li><a href="#community" data-page="community">Feed</a></li>
+                            <li><a href="#">Reviews</a></li>
+                            <li><a href="#">Artes</a></li>
+                            <li><a href="#">Streamers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-column__title">Empresa</h4>
+                        <ul>
+                            <li><a href="#">Sobre</a></li>
+                            <li><a href="#">Carreiras</a></li>
+                            <li><a href="#">Imprensa</a></li>
+                            <li><a href="#">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-column__title">Legal</h4>
+                        <ul>
+                            <li><a href="#">Termos de uso</a></li>
+                            <li><a href="#">Privacidade</a></li>
+                            <li><a href="#">Cookies</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
-        </section>
 
-        <hr class="divisor-neon">
-
-        <section id="acessorios" class="secao-conteudo">
-            <h2 class="titulo-secao">Performance Máxima</h2>
-            <div class="grid-cards">
-                <div class="card-anuncio">
-                    <div class="img-container">
-                        <img src="https://images.kabum.com.br/produtos/fotos/471996/suporte-gamer-para-notebook-kbm-gaming-bg500-ate-21-6-fans-rgb-preto-e-vermelho-kgbg500pt_1724413891_original.jpg" alt="Cooler Notebook">
-                    </div>
-                    <div class="card-info">
-                        <h3>Suporte RGB BG500</h3>
-                        <p>6 Fans de alta rotação (2400 RPM). Resfriamento extremo.</p>
-                       <a href="https://www.kabum.com.br/produto/471996/suporte-gamer-para-notebook-kbm-gaming-bg500-ate-21-6-fans-rgb-preto-e-vermelho-kgbg500pt?gclsrc=aw.ds&&utm_id=22670696131&gad_source=1&gad_campaignid=22670696131&gbraid=0AAAAADx-HyHdqVW4gWXf1xEF0jv9x7nZF&gclid=Cj0KCQiAoZDJBhC0ARIsAERP-F8CxAiOiqzRVT5gC8nD0P4vi8rxLBJ5smFFavJPTw6XTRlFDnCU8PEaAiRAEALw_wcB" target="_blank" class="cta-secundario">
-                          Comprar
-                       </a>
-                    </div>
-                </div>
-
-                <div class="card-anuncio card-placeholder">
-                    <div class="placeholder-content">
-                        <h3>Em Breve</h3>
-                        <p>Novos periféricos.</p>
-                    </div>
-                </div>
+            <div class="site-footer__bottom">
+                <p>&copy; <span id="footer-year">2026</span> Nexus.gg — feito por quem joga, pra quem joga.</p>
+                <p class="site-footer__credit">Projeto de portfólio por Vítor Camargo · HTML, CSS e JS puros</p>
             </div>
-        </section>
+        </div>
+    </footer>
+
+    <!-- ===================== SCRIPTS ===================== -->
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
