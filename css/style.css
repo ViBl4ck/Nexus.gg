@@ -1,0 +1,304 @@
+/* --- VARIAVEIS E RESET --- */
+:root {
+    --bg-dark: #0a0a0f;
+    --bg-card: #15151e;
+    --neon-blue: #00f3ff;
+    --neon-purple: #bc13fe;
+    --text-main: #ffffff;
+    --text-gray: #b3b3b3;
+    --font-title: 'Orbitron', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Rolagem suave nativa */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita rolagem lateral */
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* --- HEADER --- */
+#cabecalho {
+    background: rgba(10, 10, 15, 0.95); /* Quase opaco */
+    backdrop-filter: blur(10px); /* Efeito de vidro */
+    border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo h1 {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.highlight { color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); }
+
+#menu-principal ul { display: flex; gap: 30px; align-items: center; }
+
+#menu-principal a {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+}
+
+#menu-principal a:not(.btn-hub)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--neon-purple);
+    transition: width 0.3s;
+}
+
+#menu-principal a:hover::after { width: 100%; }
+#menu-principal a:hover { color: var(--neon-blue); }
+
+.btn-hub {
+    border: 1px solid var(--neon-purple);
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: var(--neon-purple) !important;
+}
+
+.btn-hub:hover {
+    background: var(--neon-purple);
+    color: white !important;
+    box-shadow: 0 0 15px var(--neon-purple);
+}
+
+/* --- MAIN LAYOUT --- */
+main { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+
+h2.titulo-neon, h2.titulo-secao {
+    font-family: var(--font-title);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    
+    /* Configuração do Gradiente */
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+    
+    /* A correção: Adicione a propriedade padrão */
+    background-clip: text; 
+    
+    /* Mantenha a versão Webkit (necessária para Chrome/Safari) */
+    -webkit-background-clip: text;
+    
+    /* Deixa o texto transparente para o fundo aparecer */
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Boa prática adicionar isso também para fallback */
+}
+
+
+.divisor-neon {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+    margin: 60px 0;
+}
+
+/* --- CARD DESTAQUE (ARK 2) --- */
+.destaque-principal {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s;
+}
+
+.destaque-principal:hover { transform: translateY(-5px); border-color: var(--neon-blue); }
+
+.img-wrapper { flex: 1.5; min-width: 300px; position: relative; }
+.img-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.tag-exclusiva {
+    position: absolute;
+    top: 20px; left: 20px;
+    background: var(--neon-purple);
+    padding: 5px 15px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    box-shadow: 0 0 10px var(--neon-purple);
+}
+
+.destaque-principal .card-info {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.destaque-principal h3 {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.subtitulo { color: var(--neon-blue); margin-bottom: 20px; font-weight: bold; }
+
+.price-box {
+    background: rgba(255,255,255,0.05);
+    padding: 10px;
+    border-radius: 8px;
+    margin: 20px 0;
+    display: inline-block;
+    text-align: center;
+}
+.price-box .status { color: #00ff88; font-weight: bold; margin-left: 10px; }
+
+/* --- CARDS GRID --- */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-anuncio {
+    background: var(--bg-card);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-anuncio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 243, 255, 0.15);
+}
+
+.img-container { height: 220px; overflow: hidden; }
+.img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.card-anuncio:hover .img-container img { transform: scale(1.1); }
+
+.card-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+.card-info h3 { margin-bottom: 10px; color: white; }
+.card-info p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
+
+/* Cards Vazios (Placeholders) */
+.card-placeholder {
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    background: transparent;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+.placeholder-content { text-align: center; color: rgba(255,255,255,0.3); }
+
+/* --- BOTOES --- */
+button {
+    border: none;
+    padding: 15px 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: var(--font-title);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+    width: 100%;
+    color: white;
+}
+/* --- CONFIGURAÇÃO DOS BOTÕES (Atualizado para Links) --- */
+
+/* --- CORREÇÃO DO BUG DO BOTÃO --- */
+
+.cta-principal, .cta-secundario {
+    /* Flexbox garante alinhamento perfeito vertical e horizontal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    min-height: 50px; /* Garante uma altura mínima para o botão não ficar fino */
+    padding: 0;      /* O Flexbox cuida do espaço, removemos padding extra */
+    
+    margin-top: 15px;
+    border-radius: 4px;
+    
+    font-family: var(--font-title);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 1; /* Remove o espaçamento extra da fonte Orbitron */
+    
+    cursor: pointer;
+    text-decoration: none;
+    color: white !important;
+    border: none;
+    transition: 0.3s;
+}
+
+/* Mantém as cores originais */
+.cta-principal {
+    background: linear-gradient(45deg, #c0392b, #e74c3c);
+    letter-spacing: 1px;
+}
+
+.cta-principal:hover {
+    box-shadow: 0 0 20px #e74c3c;
+    filter: brightness(1.2);
+}
+
+.cta-secundario {
+    background: linear-gradient(45deg, #0056b3, #007bff);
+}
+
+.cta-secundario:hover {
+    box-shadow: 0 0 15px #007bff;
+    transform: scale(1.02);
+}
+
+/* --- FOOTER --- */
+#rodape {
+    background: black;
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid #222;
+    margin-top: 80px;
+}
+.small-text { font-size: 0.8rem; color: #555; margin-top: 5px; }
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .header-content { flex-direction: column; gap: 15px; }
+    #menu-principal ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+    .destaque-principal { flex-direction: column; }
+    .img-wrapper { height: 250px; }
+    h2.titulo-neon { font-size: 1.5rem; }
+}
