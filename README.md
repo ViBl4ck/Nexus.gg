@@ -5,7 +5,7 @@ Onde gamers encontram o próximo vício.
 
 Plataforma simulada de catálogo de jogos inspirada em Steam, Epic Games Store, Xbox Game Pass e PlayStation Store. Construída inteiramente em HTML, CSS e JavaScript puros — sem frameworks, sem build steps, sem dependências de runtime.
 
-![alt text](image.png)
+![alt text](assets/image.png)
 
 ### Demo
 🔗 [Ver demo ao vivo](#) ---
